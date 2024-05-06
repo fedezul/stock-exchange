@@ -1,0 +1,26 @@
+.toolbar-buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+.mat-toolbar{
+  background-color: #333; 
+  color: #fff;
+}
+.button {
+  margin-right: 8px; 
+}
+
+.sidenav-container {
+  
+  position: static;
+  
+}
+
+.sidenav {
+  width: 20%; 
+}
+
+
+
+

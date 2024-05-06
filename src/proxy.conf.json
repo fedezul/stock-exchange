@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "https://data.nasdaq.com",
+      "secure": false,
+      "loglevel":"debug"
+    }
+  } 

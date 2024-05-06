@@ -1,0 +1,13 @@
+.informazioni{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .desc{
+    text-align: justify;
+  }
+  .desc ul {
+    list-style-type: disc; 
+    margin-left: 20px; 
+  }
+  

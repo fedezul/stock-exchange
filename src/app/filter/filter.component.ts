@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ChartDataset } from 'chart.js';
 
 
@@ -17,15 +17,21 @@ export class FilterComponent{
   ];
    public data = this.LineChartData
 
-  public filterOptions = ['Option1', 'Option2', 'Option3'];
-  public selectedOption = '';
+   public filterOptions = ['Option1', 'Option2', 'Option3'];
+   public selectedOption = '';
+
+   @Output() newData= new EventEmitter<ChartDataset[]>();
+
 
   filterChart() {
     if (this.selectedOption != "") {
       this.data = this.LineChartData.filter(item => item.label === this.selectedOption);
     } else {
       
+
       this.data = this.LineChartData;
     }
+
+    this.newData.emit(this.data);
   }
 }

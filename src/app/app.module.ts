@@ -23,6 +23,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { DateFilterComponent } from './date-filter/date-filter.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     FooterComponent,
     AboutComponent,
     FilterComponent,
+    DateFilterComponent,
   
     
   ],

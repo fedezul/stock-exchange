@@ -6,7 +6,9 @@
   [datasets]="data"
   [labels]="lineChartLabels"
   [options]="lineChartOptions"
-  [type]="'line'">
+  [type]="'line'"
+  >
+
 </canvas>
 
   </div>
@@ -18,5 +20,6 @@
       
   </div>
    <app-filter (newData)="newData($event)"></app-filter>
+   <app-date-filter (newDate)="newDate($event)"></app-date-filter>
     <app-footer></app-footer>
     

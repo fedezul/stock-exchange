@@ -13,18 +13,36 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 export class GraphComponent implements OnInit {
   apiData:any;
  
-  public lineChartLabels = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio'];
-  public lineChartOptions: ChartOptions = { responsive: true };
+  public lineChartLabels = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+  public lineChartOptions: ChartOptions = { 
+    scales: {
+      x: {
+        type: 'time',
+        time: {
+          unit: 'day',
+          displayFormats: {
+            day: 'YYYY-MM-DD'
+          }
+        }
+      },
+      y: {
+        beginAtZero: true
+      }
+    }
+   };
   public LineChartData: ChartDataset[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Option1' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Option2' },
-    { data: [18, 48, 77, 9, 100, 27, 40], label: 'Option3' }
+    { data: [65, 59, 80, 81, 56, 55, 40,78,28,19,90,53], label: 'Option1'},
+    { data: [28, 48, 40, 19, 86, 27, 90,60,58,78,9,44,13], label: 'Option2' },
+    { data: [18, 48, 77, 9, 100, 27, 40,38,8,69,70,23], label: 'Option3' }
   ];
 
   public data = this.LineChartData
 
  newData(newData:ChartDataset[]){
   this.data = newData
+ }
+ newDate(newDate:ChartDataset[]){
+  this.data=newDate
  }
   addNewDataset() {
     const newDataset={

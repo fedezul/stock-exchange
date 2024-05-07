@@ -4,6 +4,7 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 
 
 
+
 @Component({
   selector: 'app-graph',
   templateUrl: './graph.component.html',
@@ -36,7 +37,7 @@ export class GraphComponent implements OnInit {
   addNewDataset() {
     const newDataset={
       data: new Array(this.lineChartLabels.length).fill(0).map(()=>Math.round(Math.random()*100)),
-      label: `Dataset${this.LineChartData.length+1}`
+      label: `Dataset${this.data.length+1}`
     };
     this.data = [...this.data, newDataset];
   }
@@ -45,7 +46,12 @@ export class GraphComponent implements OnInit {
     this.data.splice(index,1);
     this.data=[...this.data]
   }
+
+  resetDataset(){
+    this.data = this.LineChartData;
+  }
    constructor(private apiService: ApiService) { }
+   
 
   ngOnInit(): void {
     this.apiService.getData().subscribe(data=>{
